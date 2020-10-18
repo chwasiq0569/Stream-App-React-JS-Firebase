@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;515;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"),
+    url(../../assets/Fonts/GTWalsheimProRegularRegular/GTWalsheimProRegularRegular.ttf)
+      format("woff");
+}
+
+.signIn__Wrapper {
+  background-image: url("../../assets//images/PK-en-20200810-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // background-color: rgba(black, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(50%, rgba(0, 0, 0, 0)),
+        to(rgba(0, 0, 0, 0.8))
+      )
+      radial-gradient(50% 100%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
+
+.signIn_Inner_Wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  .auth__Container {
+    width: 22rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #050302;
+    opacity: 0.8;
+    padding: 2.5rem;
+    border-radius: 5px;
+    .logoLink {
+      text-decoration: none;
+      .streamLogo {
+        font-family: "MyFont", sans-serif;
+        font-size: 2rem;
+        color: #e50914;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-top: -1rem;
+      }
+    }
+    .form {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: "Montserrat", sans-serif;
+      .signInText {
+        width: 100%;
+        text-align: left;
+        align-self: center;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .fireErrors {
+        color: #e50914;
+        font-weight: 600;
+        text-align: center;
+        font-size: 0.75rem;
+      }
+      input {
+        padding: 0.3rem;
+        height: 2.5rem;
+        width: 100%;
+        background-color: #454545;
+        border: none;
+        margin-top: 0.5rem;
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: rgb(153, 137, 137);
+          font-size: 0.9rem;
+        }
+      }
+      p {
+        width: 100%;
+        color: white;
+        text-align: left;
+        font-size: 0.8rem;
+      }
+      button {
+        width: 100%;
+        height: 2.5rem;
+        background-color: #e50914;
+        border-radius: 5px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 550;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        margin-bottom: 0.4rem;
+        &:hover {
+          border: 2px solid #e50914;
+          background-color: transparent;
+          color: #e50914;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .registerBtn {
+      cursor: pointer;
+      margin-top: -0.5rem;
+      width: 100%;
+      height: 2.5rem;
+      background-color: #e50914;
+      border-radius: 5px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 550;
+      transition: all 0.2s ease;
+      &:hover {
+        border: 2px solid #e50914;
+        background-color: transparent;
+        color: #e50914;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .captchaInfo {
+      margin-top: 1rem;
+      color: white;
+      text-align: left;
+      font-family: "sans-serif";
+      font-size: 0.85rem;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .signIn__Wrapper {
+    .signIn_Inner_Wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .auth__Container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logoLink {
+          .streamLogo {
+            font-size: 2.5rem;
+          }
+        }
+        .form {
+          width: 90%;
+          .signInText {
+            width: 90%;
+          }
+          height: 100%;
+          input {
+            width: 90%;
+            margin: 0;
+          }
+          p {
+            width: 90%;
+          }
+          button {
+            width: 90%;
+          }
+          .fireErrors {
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .signIn__Wrapper {
+    .signIn_Inner_Wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .auth__Container {
+        padding: 1rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logoLink {
+          .streamLogo {
+            font-size: 2rem;
+          }
+        }
+        .form {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          .signInText {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+          height: 100%;
+          input {
+            width: 100%;
+            margin: 0;
+            height: 2rem;
+            margin-bottom: 1rem;
+          }
+          p {
+            width: 100%;
+          }
+          button {
+            width: 100%;
+            height: 2rem;
+          }
+          .fireErrors {
+          }
+        }
+      }
+    }
+  }
+}
