@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        <p className="github__Repo" onClick={() => window.open("","_blank")}>Click For Github Repo</p>
+        <p className="github__Repo" onClick={() => window.open("https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git","_blank")}>Click For Github Repo</p>
     </div>
   );
 };

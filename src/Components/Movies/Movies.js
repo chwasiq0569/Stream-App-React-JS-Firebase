@@ -67,14 +67,14 @@ const Movies = ({ user }) => {
         )}
         <div className="wrapper"></div>
         <div className="rowContainer">
-          {requests.map((req, i) => (
-            <div key={req.fetchUrl}>
-              <Row title={req.title} fetchUrl={req.fetchUrl} />
-            </div>
+          {requests.map((req) => (
+            // <div key={req.fetchUrl}>
+              <Row title={req.title} fetchUrl={req.fetchUrl} key={req.fetchUrl}/>
+            // </div>
           ))}
         </div>
       <div className="footer__Container">
-            <p className="github__Repo" onClick={() => window.open("","_blank")}>Click For Github Repo</p>
+            <p className="github__Repo" onClick={() => window.open("https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git","_blank")}>Click For Github Repo</p>
         </div>
       </div>
     </div>

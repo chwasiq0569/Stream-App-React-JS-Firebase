@@ -4,6 +4,7 @@ import axios from "axios";
 import "./row.scss";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Link, useParams } from "react-router-dom";
+import MoviePoster from './MoviePoster';
 
 
 const base_url = "https://image.tmdb.org/t/p/original";
@@ -30,25 +31,16 @@ const Row = ({ title, fetchUrl, landscapePoster }) => {
       </div>
       {
         movies.length > 10 ? (<ScrollContainer className="scroll-container row">
-        {movies.map((mov, i) =>
+        {movies.map((mov,i) =>
             <div
-              key={mov?.fetchUrl}
+              key={i}
               className={
                 mov.landscapePoster === true
                   ? "poster__Container"
                   : "poster__ContainerLandscape"
               }
             >
-              <Link
-                to={{
-                  pathname: `moviepage/${mov?.id}`,
-                  state: { movie: mov },
-                }}
-              >
-                <div className="image__Container">
-                 <img src={`${base_url}${mov.poster_path}`} alt={mov.name} />
-                </div>
-              </Link>
+             <MoviePoster mov={mov} base_url={base_url} />
             </div>
         )}
       </ScrollContainer>) : "Loading..."
