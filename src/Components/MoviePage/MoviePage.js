@@ -52,7 +52,6 @@ const MoviePage = ({ location, user }) => {
             <div className="movie__Info">
               <div className="leftSide">
                 <h1>{movie?.title || movie?.name || movie?.original_name}</h1>
-                {/* <h1>Title</h1> */}
                 <p>{movie?.overview}</p>
                 <div className="Rating__Stars">
                   <img src={RatingStars} alt="RatingStars" />

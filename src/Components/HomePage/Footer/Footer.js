@@ -3,8 +3,6 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <div className="footer__Wrapper">
-      {/* banner Ended */}
-      {/* Footer Started */}
       <div className="footer__body">
         <div className="footer__firstColumn">
           <div className="makeRows">
@@ -38,7 +36,17 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        <p className="github__Repo" onClick={() => window.open("https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git","_blank")}>Click For Github Repo</p>
+      <p
+        className="github__Repo"
+        onClick={() =>
+          window.open(
+            "https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git",
+            "_blank"
+          )
+        }
+      >
+        Click For Github Repo
+      </p>
     </div>
   );
 };

@@ -4,8 +4,7 @@ import axios from "axios";
 import "./row.scss";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Link, useParams } from "react-router-dom";
-import MoviePoster from './MoviePoster';
-
+import MoviePoster from "./MoviePoster";
 
 const base_url = "https://image.tmdb.org/t/p/original";
 const Row = ({ title, fetchUrl, landscapePoster }) => {
@@ -17,21 +16,20 @@ const Row = ({ title, fetchUrl, landscapePoster }) => {
       const request = await axios.get(
         `https://api.themoviedb.org/3${fetchUrl}`
       );
-      // console.log(request.data.results);
       setMovies(request.data.results);
       return request;
     }
     getData();
   }, [fetchUrl]);
- console.log("movies: ", movies);
+  console.log("movies: ", movies);
   return (
     <div className="genreContainer">
       <div className="titleContainer">
-          <h1>{title}</h1>
+        <h1>{title}</h1>
       </div>
-      {
-        movies.length > 10 ? (<ScrollContainer className="scroll-container row">
-        {movies.map((mov,i) =>
+      {movies.length > 10 ? (
+        <ScrollContainer className="scroll-container row">
+          {movies.map((mov, i) => (
             <div
               key={i}
               className={
@@ -40,11 +38,13 @@ const Row = ({ title, fetchUrl, landscapePoster }) => {
                   : "poster__ContainerLandscape"
               }
             >
-             <MoviePoster mov={mov} base_url={base_url} />
+              <MoviePoster mov={mov} base_url={base_url} />
             </div>
-        )}
-      </ScrollContainer>) : "Loading..."
-      }
+          ))}
+        </ScrollContainer>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 };

@@ -12,7 +12,7 @@ const base_url = "https://image.tmdb.org/t/p/original";
 const Movies = ({ user }) => {
   const [landscapePoster, setLandscapePoster] = useState(true);
   const [banner, setBanner] = useState("");
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
     async function fetchData() {
@@ -28,7 +28,6 @@ const Movies = ({ user }) => {
       return request;
     }
     fetchData();
-    // let dat
   }, []);
 
   function truncate(str, n) {
@@ -39,42 +38,48 @@ const Movies = ({ user }) => {
     <div className="moviesPage__Wrapper">
       <div className="innerWrapper">
         <Navbar user={user} />
-          <div className="upper__Hero__Portion">
-            <div
-              className="middlePoster"
-              style={{
-                backgroundImage: `url(${base_url}${banner?.backdrop_path})`,
-              }}
-            >
-              <div className="innerData">
-                <h1>
-                  {banner?.title || banner?.name || banner?.original_name}
-                </h1>
-                <div className="flexBtns">
-                  <Link
-                    to={{
-                      pathname: `moviepage/${banner?.id}`,
-                      state: { movie: banner },
-                    }}
-                  >
-                    <button>View</button>
-                  </Link>
-                </div>
-                <p>{truncate(banner?.overview, 140)}</p>
+        <div className="upper__Hero__Portion">
+          <div
+            className="middlePoster"
+            style={{
+              backgroundImage: `url(${base_url}${banner?.backdrop_path})`,
+            }}
+          >
+            <div className="innerData">
+              <h1>{banner?.title || banner?.name || banner?.original_name}</h1>
+              <div className="flexBtns">
+                <Link
+                  to={{
+                    pathname: `moviepage/${banner?.id}`,
+                    state: { movie: banner },
+                  }}
+                >
+                  <button>View</button>
+                </Link>
               </div>
+              <p>{truncate(banner?.overview, 140)}</p>
             </div>
           </div>
+        </div>
         )}
         <div className="wrapper"></div>
         <div className="rowContainer">
           {requests.map((req) => (
-            // <div key={req.fetchUrl}>
-              <Row title={req.title} fetchUrl={req.fetchUrl} key={req.fetchUrl}/>
-            // </div>
+            <Row title={req.title} fetchUrl={req.fetchUrl} key={req.fetchUrl} />
           ))}
         </div>
-      <div className="footer__Container">
-            <p className="github__Repo" onClick={() => window.open("https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git","_blank")}>Click For Github Repo</p>
+        <div className="footer__Container">
+          <p
+            className="github__Repo"
+            onClick={() =>
+              window.open(
+                "https://github.com/chwasiq0569/Stream-App-React-JS-Firebase.git",
+                "_blank"
+              )
+            }
+          >
+            Click For Github Repo
+          </p>
         </div>
       </div>
     </div>
