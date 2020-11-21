@@ -8,8 +8,8 @@ import { withRouter, Link } from "react-router-dom";
 toast.configure();
 const Auth = (props) => {
   console.log("props.isProtected: ", props.isProtected);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("dummyUser@gmail.com");
+  const [password, setPassword] = useState("dummyUser@gmail.com");
   const [fireErrors, setFireErrors] = useState("");
   const [changeBtn, setChangeBtn] = useState(false);
 

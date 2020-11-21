@@ -68,6 +68,11 @@
     .signOutBtn {
       width: 6rem;
       cursor: pointer;
+      &:hover {
+        color: white;
+        font-weight: 600;
+        border: 2.5px solid white;
+      }
     }
   }
 }

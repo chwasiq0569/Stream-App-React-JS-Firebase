@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
 const Movies = ({ user }) => {
-  const [landscapePoster, setLandscapePoster] = useState(true);
+  // const [landscapePoster, setLandscapePoster] = useState(true);
   const [banner, setBanner] = useState("");
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Movies = ({ user }) => {
         <Navbar user={user} />
         <div className="upper__Hero__Portion">
           <div
-            className="middlePoster"
+            className="heroBanner"
             style={{
               backgroundImage: `url(${base_url}${banner?.backdrop_path})`,
             }}

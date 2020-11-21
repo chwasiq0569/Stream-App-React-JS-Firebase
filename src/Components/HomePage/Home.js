@@ -9,8 +9,8 @@ import fire from "./../../Firebase/config/firebase";
 
 const Home = (props) => {
   const { user, changeBtn, setChangeBtn } = props;
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("dummyUser@gmail.com");
+  const [password, setPassword] = useState("dummyUser@gmail.com");
   const [fireErrors, setFireErrors] = useState("");
   const [changeBtns, setChangeBtns] = useState(false);
 

@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import MoviePoster from "./MoviePoster";
 
 const base_url = "https://image.tmdb.org/t/p/original";
-const Row = ({ title, fetchUrl, landscapePoster }) => {
+const Row = ({ title, fetchUrl }) => {
   const [movies, setMovies] = useState([]);
   const apiUrl =
     "https://api.themoviedb.org/3/discover/tv?api_key=7f7f4abe76895cf49abdacd8093c9a27&with_networks=213/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg";
