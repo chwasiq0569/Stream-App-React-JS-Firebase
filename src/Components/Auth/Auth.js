@@ -4,6 +4,7 @@ import "./auth.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { withRouter, Link } from "react-router-dom";
+import Form from "./Form";
 
 toast.configure();
 const Auth = (props) => {
@@ -22,7 +23,7 @@ const Auth = (props) => {
     setChangeBtn(!changeBtn);
   };
 
-  const login = (e) => {
+  const logIn = (e) => {
     e.preventDefault();
     fire
       .auth()
@@ -67,6 +68,7 @@ const Auth = (props) => {
       .catch(function (error) {
         setFireErrors(error.message);
         console.log(fireErrors);
+        // return error;
       });
   };
 
@@ -77,36 +79,17 @@ const Auth = (props) => {
           <Link className="logoLink" to="/">
             <h1 className="streamLogo">Stream</h1>
           </Link>
-          <form className="form">
-            <h1 className="signInText">Sign In</h1>
-            <p className="fireErrors">{fireErrors}</p>
-            <input
-              type="text"
-              placeholder="Enter Email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <input
-              type="password"
-              placeholder="Enter Password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            {changeBtn ? (
-              <button type="submit" onClick={signUp}>
-                Sign Up
-              </button>
-            ) : (
-              <button type="submit" onClick={login}>
-                Log In
-              </button>
-            )}
-            <p>New To Stream?</p>
-            <button className="registerBtn" onClick={registerBtnFunc}>
-              Register
-            </button>
-          </form>
-
+          <Form
+            logIn={logIn}
+            signUp={signUp}
+            email={email}
+            password={password}
+            fireErrors={fireErrors}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            changeBtn={changeBtn}
+            registerBtnFunc={registerBtnFunc}
+          />
           <p className="captchaInfo">
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot

@@ -11,8 +11,6 @@ const base_url = "https://image.tmdb.org/t/p/original";
 const Row = ({ title, fetchUrl }) => {
   const [movies, setMovies] = useState([]);
   const [loadingState, setLoadingState] = useState(true);
-  // const apiUrl =
-  //   "https://api.themoviedb.org/3/discover/tv?api_key=7f7f4abe76895cf49abdacd8093c9a27&with_networks=213/4EYPN5mVIhKLfxGruy7Dy41dTVn.jpg";
   useEffect(() => {
     let isMounted = true;
     async function getData() {
