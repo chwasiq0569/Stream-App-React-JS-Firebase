@@ -11,7 +11,6 @@ function App(props) {
   const { match, location, history } = props;
   const [user, setUser] = useState(null);
   const [changeBtn, setChangeBtn] = useState(false);
-  const [isProtected, setIsProtected] = useState(false);
   useEffect(() => {
     const unsubscribe = fire.auth().onAuthStateChanged((user) => {
       if (user) {

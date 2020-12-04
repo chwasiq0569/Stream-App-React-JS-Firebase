@@ -5,6 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+.loadingStateMain {
+  width: 100%;
+  height: 100vh;
+  background-color: #0c0c0c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .moviesPage__Wrapper {
   .footer__Container {
     @media only screen and (max-width: 760px) {

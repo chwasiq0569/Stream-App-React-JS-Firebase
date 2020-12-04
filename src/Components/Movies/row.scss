@@ -5,6 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.loadingStateRow {
+  height: 25vh !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .genreContainer {
   height: auto;
   margin-left: 1.8rem;

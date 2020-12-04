@@ -24,6 +24,7 @@ const Navbar = (props) => {
 
   return (
     <nav className="navbar__Wrapper">
+      {/*if user is login it will access movies page otherwise it will see homepage*/}
       <Link
         to={user ? { pathname: "/movies" } : { pathname: "/" }}
         className="logoLink"

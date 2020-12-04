@@ -2,8 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
-  console.log("...props: ", rest);
-  console.log("...props: ", user);
+  //...rest contains pathname and other props that ar epassed to PrivateRoute Component
   return (
     <Route
       {...rest}
